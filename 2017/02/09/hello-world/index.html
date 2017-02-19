@@ -16,9 +16,23 @@
   
   
   
-    <meta name="description" content="��һ��,���羫�ʴ�����">
+    <meta name="description" content="部署主题，本地查看效果
+
+ 返回Hexo目录，右键git bash，输入
+
+hexo ghexo s
+
+
+打开浏览器，输入http://localhost:4000  即预览本地主题更换
+如果效果满意,将它部署到github上
+
+打开Hexo文件夹，右键git bash，输入
+
+hexo clean （必须要，不然有时因为缓存问题，服务器更新不了主题）hexo g -d
+
+打开自己主页即可以...">
   
-  <title>Just Do It! [ Tim-ao ]</title>
+  <title>关于Hexo博客的更新问题 [ Tim-ao ]</title>
   
     <link rel="alternate" href="/atom.xml" title="Tim-ao">
   
@@ -36,92 +50,170 @@
   
 </head>
 
-<div class="random-center hide-area">
-  <div id="random-index">
-    <div class="center-field">
-      <img class="avatar" src="/images/avatar.jpg" width=120 height=120 onClick="openUserCard()">
+<body>
+<div class="side-navigate hide-area">
+  
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="/images/avatar.jpg"/>
+          <div id="homelink">Tim-ao</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">主页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">存档</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">关于</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/apacheao/">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
     </div>
-    <div class="center-field">
-      <div class="title" onClick="openUserCard()">Tim-ao</div>
-      <div class="sub-title" onClick="openUserCard()">Just Do It!</div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>关于Hexo博客的更新问题</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2017-02-09</span>
+      
+        <span id = "post-title-updated">Updated at 2017-02-09</span>
+      
+      
+      <span id = "post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/Technology/">Technology</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/Hexo/">Hexo</a>
+      
+      </span>
+      
+    </p>
+    
+    <p><strong>部署主题，本地查看效果</strong></p>
+<hr>
+<p> 返回Hexo目录，右键git bash，输入</p>
+<blockquote>
+<p>hexo g<br>hexo s</p>
+</blockquote>
+<hr>
+<p>打开浏览器，输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>  即预览本地主题更换</p>
+<p><br><br><br><strong>如果效果满意,将它部署到github上</strong></p>
+<hr>
+<p>打开Hexo文件夹，右键git bash，输入</p>
+<blockquote>
+<p>hexo clean （必须要，不然有时因为缓存问题，服务器更新不了主题）<br>hexo g -d</p>
+</blockquote>
+<p><br><br><strong>打开自己主页即可以浏览自己Blog效果</strong></p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+      
     </div>
-    <hr >
-    <div class="center-field">
-      <ul class="index-nav-link">
-        
-        
-          
-            <li><a href="/index.html">主页</a></li>
-          
-        
-          
-            <li><a href="/archives">存档</a></li>
-          
-        
-          
-            <li><a href="/categories">分类</a></li>
-          
-        
-          
-            <li><a href="/tags">标签</a></li>
-          
-        
-          
-            <li><a href="/about">关于</a></li>
-          
-        
-          
-            <li><a href="https://github.com/apacheao/">Github</a></li>
-          
-        
-      </ul>
-      <ul class="social-icon">
-  
-  
-    <li>
-      <a href="https://www.douban.com/people/102386480/">
-        
-          <i class="icon iconfont douban">&#xe60f;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="https://Facebook.com/">
-        
-          Facebook
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://weibo.com/5310594076/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="https://github.com/apacheao">
-        
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://chensd.com/feed">
-        
-          <i class="icon iconfont rss">&#xe60e;</i>
-        
-      </a>
-    </li>
-  
-</ul>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Tim-ao using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
     </div>
   </div>
 </div>
+
+</div>
+
+
+
 <div id="user-card">
   <div class="center-field">
     <img class="avatar" src="/images/avatar.jpg">
@@ -236,6 +328,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
