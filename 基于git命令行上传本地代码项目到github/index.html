@@ -16,9 +16,14 @@
   
   
   
-    <meta name="description" content="下一次,世界精彩处见！">
+    <meta name="description" content="关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤
+添加本地与github的ssh key 
+
+
+
+打开本地的git shell   通过cd命令进入你要上传的工程中 执行 git init  再执行git add . （小数点代表的是上传所用的文件）再执行git commit -m “first commit” 再执行 git remote add origin + rep...">
   
-  <title>标签 [ Tim-ao ]</title>
+  <title>基于git命令行上传本地代码项目到github [ Tim-ao ]</title>
   
     <link rel="alternate" href="/atom.xml" title="Tim-ao">
   
@@ -39,6 +44,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/hello-world/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        关于Hexo博客的更新问题
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -78,7 +92,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/tags">标签</a>
             
@@ -110,15 +124,53 @@
     <div id="content-inner">
       
       
-  <article id="page">
+  <article id="post">
+    <h1>基于git命令行上传本地代码项目到github</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-02-19</span>
+      
+        <span id = "post-title-updated">修改于 2017-02-19</span>
+      
+      
+      <span id = "post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/Github/">Github</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/git/">git</a>
+      
+      </span>
+      
+    </p>
     
-    
-      <h1 class="center-title">标签</h1>
-      <div class="tag-cloud-tags">
-        <a href="/tags/Hexo/" style="font-size: 16px; color: #999">Hexo</a> <a href="/tags/git/" style="font-size: 16px; color: #999">git</a>
-      </div>
-    
+    <h2 id="关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤"><a href="#关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤" class="headerlink" title="关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤"></a>关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤</h2><blockquote>
+<p><1>添加本地与github的ssh key </1></p>
+</blockquote>
+<hr>
+<blockquote>
+<p><2>打开本地的git shell   通过cd命令进入你要上传的工程中 执行 git init  再执行git add . （小数点代表的是上传所用的文件）再执行git commit -m “first commit” 再执行 git remote add origin + repository下的URL 再执行git pull 再执行git pull origin master 最后再执行git push -u origin master</2></p>
+</blockquote>
+
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤"><span class="toc-text">关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤</span></a></li></ol>
+  </div>
+</div>
 
   
 <nav id="pagination">
@@ -126,6 +178,8 @@
 
   
 
+  
+    <a href="/hello-world/" class="next">下一篇 关于Hexo博客的更新问题 &rarr;</a>
   
 </nav>
 
@@ -268,6 +322,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
