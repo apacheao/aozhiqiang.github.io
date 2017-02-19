@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-19T10:29:10.130Z</updated>
+  <updated>2017-02-19T11:18:06.133Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,31 +16,31 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Javascript中关于正则表达式的一些问题</title>
+    <title>正则表达式</title>
     <link href="http://yoursite.com/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     <id>http://yoursite.com/正则表达式/</id>
     <published>2017-02-18T16:00:00.000Z</published>
-    <updated>2017-02-19T10:29:10.130Z</updated>
+    <updated>2017-02-19T11:18:06.133Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Javascript中关于正则表达式的一些问题"><a href="#Javascript中关于正则表达式的一些问题" class="headerlink" title="Javascript中关于正则表达式的一些问题"></a>Javascript中关于正则表达式的一些问题</h3><hr>
 <p><strong>1.修饰符 </strong><br>  修饰符分为三类：<br>  1）global：全局搜索，不添加，搜索到第一个匹配停止 （g）<br>  2) ignore case：忽略大小写，默认大小写敏感 （i）<br>  3）multiple lines：多行搜索 （m）</p>
-<p><strong>2.预定义类</strong><br>  <img src="./正则表达式1.png" alt="Alt text"></p>
-<p> 关于预定义类的demo<br>  <img src="./正则表达式2.png" alt="Alt text"></p>
-<p><strong>3.量词</strong><br>由于元字符与特殊字符或字符类或者它们的组合（中括号）甚至它们的马甲（预定义类）都是一对一进行匹配。我们要匹配”司徒正美这个词”，最简单都要/…/，如果长达50个字就比较麻烦。因此我们迫切需要一个简单的操作来处理这类的数量关系（量词仅匹配于紧挨着它的字符）。<img src="./正则表达式5.png" alt="Alt text"></p>
-<p>比如：<img src="./正则表达式3.png" alt="Alt text"><br><img src="./正则表达式4.png" alt="Alt text"></p>
+<p><strong>2.预定义类</strong><br>  <img src="D:\Blog_images\正则表达式1.png" alt="Alt text"></p>
+<p> 关于预定义类的demo<br>  <img src="D:\Blog_images\正则表达式2.png" alt="Alt text"></p>
+<p><strong>3.量词</strong><br>由于元字符与特殊字符或字符类或者它们的组合（中括号）甚至它们的马甲（预定义类）都是一对一进行匹配。我们要匹配”司徒正美这个词”，最简单都要/…/，如果长达50个字就比较麻烦。因此我们迫切需要一个简单的操作来处理这类的数量关系（量词仅匹配于紧挨着它的字符）。<img src="D:\Blog_images\正则表达式5.png" alt="Alt text"></p>
+<p>比如：<img src="D:\Blog_images\正则表达式3.png" alt="Alt text"><br><img src="D:\Blog_images\正则表达式4.png" alt="Alt text"></p>
 <p><strong>4.非贪婪模式</strong><br>让正则表达式尽可能少的匹配，也就是说一旦成功匹配不在继续尝试就是非贪婪模式<br>做法很简单，在量词后加上？即可</p>
 <blockquote>
 <p>‘123456789’.match(/\d(3,5)?/g)<br>[“123”，”456”，”789”] </p>
 </blockquote>
-<p><strong>5.分组</strong><br>到目前为止，我们只能一个字符到匹配，虽然量词的出现，能帮助我们处理一排密紧密相连的同类型字符。但这是不够的，下面该轮到小括号出场了，中括号表示范围内选择，大括号表示重复次数。小括号允许我们重复多个字符。<img src="./正则表达式6.png" alt="Alt text"></p>
-<p>以及不同的表达式所体现的不同图形含义<br><img src="./正则表达式7.png" alt="Alt text"><br><img src="./正则表达式8.png" alt="Alt text"></p>
-<p>在Console中对分组测试<br><img src="./正则表达式9.png" alt="Alt text"><br><img src="./正则表达式10.png" alt="Alt text"><br><img src="./正则表达式11.png" alt="Alt text"><br><img src="./正则表达式12.png" alt="Alt text"><br><img src="./正则表达式13.png" alt="Alt text"></p>
-<p><strong>6.反向引用</strong><br>反向引用标识由正则表达式中的匹配组捕获的子字符串。每个反向引用都由一个编号或名称来标识，并通过“\编号”表示法进行引用。<img src="./正则表达式14.png" alt="Alt text"></p>
-<p><strong>7.前瞻</strong><br>正则表达式从文本头部向尾部开始解析，文本尾部方向称为”前”<br>前瞻就是在正则表达式匹配到规则的时候，向前检查是否符合断言，后顾、后瞻方向相反。<img src="./正则表达式15.png" alt="Alt text"></p>
-<p><img src="./正则表达式16.png" alt="Alt text"><br>继续在分组内做文章，前瞻与后瞻其实都属于零宽断言，但js不支持后瞻，正向前瞻用来检查接下来出现的是不是某个特定的字符集。而负向前瞻则是检查接下来不应该出现的特定字符串集。零宽断言是不会捕获的。<img src="./正则表达式17.png" alt="Alt text"><img src="./正则表达式18.png" alt="Alt text"></p>
+<p><strong>5.分组</strong><br>到目前为止，我们只能一个字符到匹配，虽然量词的出现，能帮助我们处理一排密紧密相连的同类型字符。但这是不够的，下面该轮到小括号出场了，中括号表示范围内选择，大括号表示重复次数。小括号允许我们重复多个字符。<img src="D:\Blog_images\正则表达式6.png" alt="Alt text"></p>
+<p>以及不同的表达式所体现的不同图形含义<br><img src="D:\Blog_images\正则表达式7.png" alt="Alt text"><br><img src="D:\Blog_images\正则表达式8.png" alt="Alt text"></p>
+<p>在Console中对分组测试<br><img src="D:\Blog_images\正则表达式9.png" alt="Alt text"><br><img src="D:\Blog_images\正则表达式10.png" alt="Alt text"><br><img src="D:\Blog_images\正则表达式11.png" alt="Alt text"><br><img src="D:\Blog_images\正则表达式12.png" alt="Alt text"><br><img src="D:\Blog_images\正则表达式13.png" alt="Alt text"></p>
+<p><strong>6.反向引用</strong><br>反向引用标识由正则表达式中的匹配组捕获的子字符串。每个反向引用都由一个编号或名称来标识，并通过“\编号”表示法进行引用。<img src="D:\Blog_images\正则表达式14.png" alt="Alt text"></p>
+<p><strong>7.前瞻</strong><br>正则表达式从文本头部向尾部开始解析，文本尾部方向称为”前”<br>前瞻就是在正则表达式匹配到规则的时候，向前检查是否符合断言，后顾、后瞻方向相反。<img src="D:\Blog_images\正则表达式15.png" alt="Alt text"></p>
+<p><img src="D:\Blog_images\正则表达式16.png" alt="Alt text"><br>继续在分组内做文章，前瞻与后瞻其实都属于零宽断言，但js不支持后瞻，正向前瞻用来检查接下来出现的是不是某个特定的字符集。而负向前瞻则是检查接下来不应该出现的特定字符串集。零宽断言是不会捕获的。<img src="D:\Blog_images\正则表达式17.png" alt="Alt text"><img src="D:\Blog_images\正则表达式18.png" alt="Alt text"></p>
 <p><strong>8.对象属性</strong><br>1）global：是否全文搜索，默认false<br>2）ignore case：是否大小写敏感，默认是false<br>3）multiline：多行搜索，默认值是false<br>4）lastIndex：是当前表达式匹配内容的最后一个字符的下一个位置<br>5）source：正则表达式的文本字符串</p>
-<p> 对lastIndex概念的demo<br> <img src="./正则表达式19.png" alt="Alt text"></p>
-<p><strong>边界</strong><br>要与字符类合用<br><img src="./正则表达式20.png" alt="Alt text"><br>实现首字母大写<br><img src="./正则表达式21.png" alt="Alt text"></p>
+<p> 对lastIndex概念的demo<br> <img src="D:\Blog_images\正则表达式19.png" alt="Alt text"></p>
+<p><strong>边界</strong><br>要与字符类合用<br><img src="D:\Blog_images\正则表达式20.png" alt="Alt text"><br>实现首字母大写<br><img src="D:\Blog_images\正则表达式21.png" alt="Alt text"></p>
 ]]></content>
     
     <summary type="html">
