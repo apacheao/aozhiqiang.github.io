@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-02-24T09:35:18.707Z</updated>
+  <updated>2017-03-01T08:08:36.783Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于瀑布流应该注意的一些问题</title>
+    <link href="http://yoursite.com/%E5%85%B3%E4%BA%8E%E7%80%91%E5%B8%83%E6%B5%81%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
+    <id>http://yoursite.com/关于瀑布流应该注意的一些问题/</id>
+    <published>2017-03-01T08:06:31.000Z</published>
+    <updated>2017-03-01T08:08:36.783Z</updated>
+    
+    <content type="html"><![CDATA[<pre><code>**关于瀑布流应该注意的一些问题**
+</code></pre><hr>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;瀑布流的特点： 可以渲染出从后台导出的数据，从而节约前端的内存压力，加快数据加载的速度。<br>&nbsp;&nbsp;&nbsp;&nbsp;其原理：当你滑动滚动条到一定的距离时，窗口会自动加载从后台出来的数据</p>
+<hr>
+<p>在js文件夹里将data以json数据格式进行处理；</p>
+<pre><code>var dataInt={
+     &quot;data&quot;:[ {&apos;src&apos;:&quot;0.jpg&quot;}, {&apos;src&apos;:&quot;1.jpg&quot;},
+              {&apos;src&apos;:&quot;2.jpg&quot;}, {&apos;src&apos;:&quot;3.jpg&quot;},
+              {&apos;src&apos;:&quot;4.jpg&quot;}, {&apos;src&apos;:&quot;5.jpg}]
+            }
+</code></pre><hr>
+<p>将数据塞进HTML结构中；</p>
+<pre><code>for(var i=0;i&lt;dataInt.data.length;i++){
+ var oBox=document.createElement(&apos;div&apos;);
+ oBox.className=&apos;box&apos;;
+ oParent.appendChild(oBox);
+ var oPic=document.createElement(&apos;div&apos;);
+ oPic.className=&apos;pic&apos;;
+ oBox.appendChild(oPic);
+ var oImg=document.createElement(&apos;img&apos;);
+ oImg.src=&quot;images/&quot;+dataInt.data[i].src;
+ oPic.appendChild(oImg);}
+</code></pre><hr>
+<p>除了渲染部分还以该注意在取窗口的高度以及滑块距离窗口顶部时存在浏览器的兼容问题，即，存在混杂模式与非混杂模式，其处理方式为：</p>
+<pre><code>var scollTop=document.body.scollTop||document.documentElement.scollTop;
+var height=document.body.clientHeight||document.documentElement.clientHeight;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;pre&gt;&lt;code&gt;**关于瀑布流应该注意的一些问题**
+&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
+&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;瀑布流的特点： 可以渲染出从后台导出的数据，从而节约前端的内存压力，加快数据加载的速度。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp
+    
+    </summary>
+    
+      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
+    
+    
+      <category term="waterfall" scheme="http://yoursite.com/tags/waterfall/"/>
+    
+  </entry>
   
   <entry>
     <title>关于对篮球这项运动的理解</title>
