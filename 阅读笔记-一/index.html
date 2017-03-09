@@ -2,8 +2,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,17 @@
   
   
   
-    <meta name="description" content="下一次,世界精彩处见！">
+    <meta name="description" content="阅读笔记(一)
+ 计算属性
+
+计算属性应用于一切复杂逻辑基础实例：
+&lt;div id=&quot;example&quot;&gt;
+    &lt;p&gt;Original message{{message}}&lt;/p&gt;
+    &lt;p&gt;computed message{{reversedMessage}}&lt;/p&gt;
+&lt;/div&gt;
+     ...">
   
-  <title>Category: Github [ Tim-ao ]</title>
+  <title>阅读笔记(一) [ Tim-ao ]</title>
   
     <link rel="alternate" href="/atom.xml" title="Tim-ao">
   
@@ -41,6 +47,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/关于瀑布流应该注意的一些问题/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        关于瀑布流应该注意的一些问题
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -73,7 +88,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/categories">分类</a>
             
@@ -112,151 +127,138 @@
     <div id="content-inner">
       
       
-  <article id="page">
-    
+  <article id="post">
+    <h1>阅读笔记(一)</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2017-03-09</span>
       
-    
+        <span id = "post-title-updated">Updated at 2017-03-09</span>
       
-    
       
-    
-      
-        <h1 class="center-title">
-          Category
-          
-        </h1>
-      
-    
-      
-    
-      
-    
-    <ul class="category-list">
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Technology/">Technology</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Sports/">Sports</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/JS/">JS</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a class="active" href="/categories/Github/">Github</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/javascript/">javascript</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Vue/">Vue</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-    </ul>
-    
+      <span id = "post-title-categories">Category
       
       
         
+        
+        <a href="/categories/Vue/">Vue</a>
+      
+      </span>
       
       
-    
+      <span id = "post-title-tags">
+      Tag
       
       
         
-      
-      
-    
-      
-      
         
+        <a href="/tags/计算属性/">计算属性</a>
       
+      </span>
       
+    </p>
     
-      
-      
-        
-          
-        
-      
-      
-      <div class="post-title-item">
-  
-  <a href="/基于git命令行上传本地代码项目到github/">
-  
-    基于git命令行上传本地代码项目到github
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">2-16</span>
-    
-    <span id = "post-title-categories">Category
-    
-    
-      
-      
-      <a href="/categories/Github/">Github</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    Tag
-    
-    
-      
-      
-      <a href="/tags/git/">git</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
+    <h1 id="阅读笔记-一"><a href="#阅读笔记-一" class="headerlink" title="阅读笔记(一)"></a>阅读笔记(一)</h1><hr>
+<p> <strong>计算属性</strong></p>
+<hr>
+<p>计算属性应用于一切复杂逻辑<br><br><br>基础实例：<br></p>
+<pre><code>&lt;div id=&quot;example&quot;&gt;
+    &lt;p&gt;Original message{{message}}&lt;/p&gt;
+    &lt;p&gt;computed message{{reversedMessage}}&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><p>   <br>  </p>
+<pre><code>var vm = new Vue({
+  el:&quot;#example&quot;,
+  data:{message:&apos;Hello&apos;},
+  computed:{
+  reversedMessage:function(){
+           return this message.split(&apos;&apos;).reverse().join(&apos;&apos;)}
+           }
+});
+</code></pre><hr>
+<p><strong>说明：</strong></p>
+<hr>
+<p>这里我们声明了一个计算属性reversedMessage。我们提供的函数将用作属性vm.reversedMessage的getter,这里的reversedMessage得知取决于vm.message<br><br> </p>
+<hr>
+<p>不难看出我们也可以通过methods来实现：</p>
+<pre><code>var vm = new Vue({
+  el:&quot;#example&quot;,
+  data:{message:&apos;Hello&apos;},
+  methods:{
+     reversedMessage:function(){
+          return this message.split(&apos;&apos;).reversed().join(&apos;&apos;)
+            }}; 
+</code></pre><hr>
+<p>关于computed与methods的区别：<br><br>计算属性存在依赖缓存，计算属性在相关依赖发生变化时才会重新取值，这就意味着只要message不发生改变， 计算属性就会立即返回之前的结果，而不必再执行函数。<br><br><hr>这也就意味着如下计算属性不会更新，因为Date.now()不是响应式依赖。</p>
+<pre><code>comptued:{
+   now:function(){
+     return Data.now()
+}}
+</code></pre><hr>
+<p>相比于计算属性，每次渲染，methods都会执行函数。<br><br><br>关于computed与methods的选择：我们为什么用计算缓存？假设我们有一个重要的计算属性A，这个计算属性需要大量的数组遍历和做巨大的运算，然后我们可能用其他的计算属性依赖A，如果没有缓存我们必须大量执行A的getter！如果不需要缓存请用methods.<br><br><br><hr><br><strong>计算属性&nbsp;VS&nbsp;Watch&nbsp;property</strong></p>
+<p>vue.js提供了一个$watch方法，它便于观察Vue实例上的数据变动</p>
+<pre><code>&lt;div id=&quot;demo&quot;&gt;{{fullName}}&lt;/div&gt;
+</code></pre><p>   <br></p>
+<pre><code>var vm = new Vue({
+     el:&quot;demo&quot;
+     data:{
+        firstName:&apos;Foo&apos;,
+        lastName:&apos;Bar&apos;,
+        fullName:&apos;Foo Bar&apos;}
+     watch:{
+       firstName:function(){
+            this.fullName = val + &apos;&apos; +this.lastName },
+       lastName:function(){
+            this.fullName = this.first + &apos;&apos; +val },  
+     }})
+</code></pre><p>   <br></p>
+<pre><code>var vm = new Vue({
+        el:&quot;demo&quot;
+        data:{
+            firstName:&apos;Foo&apos;,
+            lastName:&apos;Bar&apos;
+            },
+        computed:{
+           fullName:function(){
+           return this.firstName + &apos; &apos; + this.lastName}}
+        });     
+</code></pre><hr>
+<p>计算setter:计算属性默认只有getter,在必要时也可以设置setter</p>
+<pre><code>computed:{
+   fullName:{
+      get:function(){
+      return this.firstName + &apos; &apos; + this.lastName}
+      set:function(newValue){
+      var names = newValue.split() 
+      firstName = names[0]
+      lastName = name[names.length-1]
+      }}}
+</code></pre><p><br><br>现在更新vm.fullName时，vm.firstName以及vm.lastName也会对应更新。</p>
+
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#阅读笔记-一"><span class="toc-text">阅读笔记(一)</span></a></li></ol>
+  </div>
+</div>
 
   
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/关于瀑布流应该注意的一些问题/" class="next">Next post 关于瀑布流应该注意的一些问题 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -392,6 +394,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
