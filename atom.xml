@@ -64,7 +64,7 @@
     <link href="http://yoursite.com/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80/"/>
     <id>http://yoursite.com/阅读笔记-一/</id>
     <published>2017-03-08T16:00:00.000Z</published>
-    <updated>2017-03-09T09:11:50.256Z</updated>
+    <updated>2017-03-22T11:56:11.630Z</updated>
     
     <content type="html"><![CDATA[<h1 id="阅读笔记-一"><a href="#阅读笔记-一" class="headerlink" title="阅读笔记(一)"></a>阅读笔记(一)</h1><hr>
 <p> <strong>计算属性</strong></p>
@@ -153,7 +153,7 @@
     
     </summary>
     
-      <category term="Vue" scheme="http://yoursite.com/categories/Vue/"/>
+      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
     
     
       <category term="计算属性" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/"/>
