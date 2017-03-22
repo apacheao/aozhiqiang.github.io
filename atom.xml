@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-03-22T12:11:57.849Z</updated>
+  <updated>2017-03-22T12:23:25.964Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,17 +20,21 @@
     <link href="http://yoursite.com/%E5%9C%A8vue%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E4%B8%AD%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/在vue事件处理中注意的问题/</id>
     <published>2017-03-22T11:50:44.000Z</published>
-    <updated>2017-03-22T12:11:57.849Z</updated>
+    <updated>2017-03-22T12:23:25.964Z</updated>
     
-    <content type="html"><![CDATA[<p>###在vue事件处理中注意的问题<br><strong>1.在事件处理程序中调用<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">  </div><div class="line"> &lt;li&gt;  ```.stop``` &lt;/li&gt;</div><div class="line"> &lt;li&gt;```.prevent```&lt;/li&gt;</div><div class="line">&lt;li&gt;```.capture```&lt;/li&gt;</div><div class="line">&lt;li&gt;```.self```&lt;/li&gt;</div><div class="line">&lt;li&gt;```.once```&lt;/li&gt;</div><div class="line"> </div><div class="line"></div><div class="line"> </div><div class="line">```&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt;```   // 阻止单击事件冒泡 </div><div class="line">```&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;```  //提交事件不再重载页面 </div><div class="line">```&lt;a v-on:click.stop.prevent=&quot;toThat&quot;&gt;&lt;/a&gt;```//字符串可以串联 </div><div class="line">```&lt;form v-on:submit.prevent&gt;&lt;/form&gt;```//只有修饰符 </div><div class="line">```&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt;```//添加事件侦听器时使用事件捕获模式 </div><div class="line">```&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;```//只有事件在该元素本身（而不是子元素）触发时触发回调 </div><div class="line">```&lt;a v-on:click.once=&quot;doThis&quot;&gt;&lt;/a&gt;```//-点击事件只会触发一次 </div><div class="line">&lt;hr&gt;</div><div class="line">&lt;strong&gt;按键修饰符&lt;/strong&gt;</div><div class="line">```&lt;input @keyup.enter=&quot;submit&quot;&gt;</div></pre></td></tr></table></figure></strong></p>
- <ul><br>   <li>  <code>.enter</code> </li><br>   <li><code>.tab</code></li><br>  <li><code>.delete</code></li><br>  <li><code>.esc</code></li><br>  <li><code>.space</code></li><br>  <li><code>.up</code></li><br>  <li><code>.dowm</code></li><br>  <li><code>.left</code></li><br>  <li><code>.right</code></li><br>  <li><code>.ctrl</code></li><br>  <li><code>.alt</code></li><br>  <li><code>.shift</code></li><br>  <li><code>.meta</code></li><br></ul>
+    <content type="html"><![CDATA[<p>###在vue事件处理中注意的问题<br>1.在事件处理程序中调用<strong>event.preventDefault()</strong>或<strong>event.stopPropagation()</strong>是非常常见的需求。尽管我们可以在methods中轻松实现这点，但更好的方法是：methods只是纯粹的数据逻辑，而不是去处理DOM事件细节。为了解决这一问题，vue.js为<strong>v-on</strong>提供了事件修饰符。通过由点（.）表示的指令后缀来调用修饰符.</p>
+<ul style="color:#F60"><br> <li>.stop</li><br> <li>.prevent</li><br> <li>.capture</li><br> <li>.self</li><br> <li>.once</li><br></ul>
+
+
+<figure class="highlight plain"><figcaption><span>v-on:click.stop="doThis">```</span><a href="//">阻止单击事件冒泡 </a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">```&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;```  //提交事件不再重载页面 </div><div class="line">```&lt;a v-on:click.stop.prevent=&quot;toThat&quot;&gt;&lt;/a&gt;```//字符串可以串联 </div><div class="line">```&lt;form v-on:submit.prevent&gt;&lt;/form&gt;```//只有修饰符 </div><div class="line">```&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt;```//添加事件侦听器时使用事件捕获模式 </div><div class="line">```&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt;```//只有事件在该元素本身（而不是子元素）触发时触发回调 </div><div class="line">```&lt;a v-on:click.once=&quot;doThis&quot;&gt;&lt;/a&gt;```//-点击事件只会触发一次 </div><div class="line">&lt;hr&gt;</div><div class="line">&lt;strong&gt;按键修饰符&lt;/strong&gt;</div><div class="line">```&lt;input @keyup.enter=&quot;submit&quot;&gt;</div></pre></td></tr></table></figure>
+ <ul style="color:#f60"><br>   <li> .enter</li><br>   <li>`.tab</li><br>  <li>.delete</li><br>  <li>.esc</li><br>  <li>.space</li><br>  <li>.up</li><br>  <li>.dowm</li><br>  <li>.left</li><br>  <li>.right</li><br>  <li>.ctrl</li><br>  <li>.alt</li><br>  <li>.shift</li><br>  <li>.meta</li><br></ul>
 
 
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;###在vue事件处理中注意的问题&lt;br&gt;&lt;strong&gt;1.在事件处理程序中调用&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div
+      &lt;p&gt;###在vue事件处理中注意的问题&lt;br&gt;1.在事件处理程序中调用&lt;strong&gt;event.preventDefault()&lt;/strong&gt;或&lt;strong&gt;event.stopPropagation()&lt;/strong&gt;是非常常见的需求。尽管我们可以在methods中
     
     </summary>
     
