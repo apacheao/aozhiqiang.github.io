@@ -131,12 +131,12 @@
   <article id="post">
     <h1>关于闭包</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">撰写于 2017-03-22</span>
+      <span id = "post-title-date">Created at 2017-03-22</span>
       
-        <span id = "post-title-updated">修改于 2017-03-22</span>
+        <span id = "post-title-updated">Updated at 2017-03-22</span>
       
       
-      <span id = "post-title-categories">分类
+      <span id = "post-title-categories">Category
       
       
         
@@ -147,7 +147,7 @@
       
       
       <span id = "post-title-tags">
-      标签
+      Tag
       
       
         
@@ -161,10 +161,10 @@
     <html><head><title>关于闭包</title><meta charset="utf-8"><link href="https://dn-maxiang.qbox.me/res-min/themes/marxico.css" rel="stylesheet"><style></style></head><body><div id="preview-contents" class="note-content"><br><br><br><br><br><br><h3 id="关于闭包">关于闭包</h3><br><br><p><strong>1.为什么要用闭包？</strong> <br><br>在ES5之前具有作用域的仅有函数function。并且有一个特点就是：函数内部可以直接访问外部变量，但在函数外部无法访问函数内部变量，这就是JS语言特有的“练市作用域”结构（chain scope），如果我们要访问函数的内部变量我们就得使用闭包，简单地说，我们使用闭包的主要作用就是间接访问函数的内部数据。 <br><br></p><hr><strong>&lt;1&gt;如何创建闭包</strong><p></p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs delphi">      <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>;<br>      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span><span class="hljs-params">()</span><span class="hljs-comment">{<br>        console.log(num);<br>        }</span><br>        <span class="hljs-title">showNum</span><span class="hljs-params">()</span>;</span>   <span class="hljs-comment">//12</span><br></code></pre><br><br><p>在上面代码中执行函数showNum(),因为函数内部可以访问外部变量num，所以执行结果为12.</p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs javascript">      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>; <span class="hljs-comment">//此处要注意var声明，否则等于直接声明全局变量num</span><br>      <span class="hljs-built_in">console</span>.log(num);<span class="hljs-comment">//Uncaught ReferentceError: num is not defined</span><br>      }<br></code></pre><br><br><p>由于函数外部不能够访问函数内部变量所以直接访问输出num时，由于此时num并未定义，故抛出异常信息。</p><hr> <br><br><strong>在函数内部定义一个内部函数，并将这个函数当作返回值，这样我们就可以获得函数的局部变量。</strong><p></p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs javascript"> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span>(<span class="hljs-params"></span>)</span>{<br>   <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>;<br> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum2</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-built_in">console</span>.log(num);<br> };<br>   <span class="hljs-keyword">return</span> showNum();<br> }<br> <span class="hljs-keyword">var</span> myNum = showNum();<br>   muNum();  <span class="hljs-comment">//12</span><br></code></pre><br><br><p>在上面的代码中，在函数showNum中嵌一层函数showNum2，由于内层函数可以访问外层函数的变量，所以，执行showNum()函数的，showNum2函数可以直接读取外层函数showNum()的局部变量num的值，并输出12。<br><br><strong>以上实现了闭包的主要作用域之一：读取函数内部变量</strong></p><hr> <br><br><strong>2.还可以将创建变量的值始终保持在内存中，以供本地环境使用</strong><p></p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span>(<span class="hljs-params"></span>)</span>{<br>    <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum2</span>(<span class="hljs-params"></span>)</span>{<br>       <span class="hljs-built_in">console</span>.log(++num);<br>      };<br>       <span class="hljs-keyword">return</span> showNum2;<br>    }<br>    <span class="hljs-keyword">var</span> myNum = showNum();<br>    myNum();   <span class="hljs-comment">//13</span><br></code></pre><br><br><p>一般情况下在函数被调用完后不再被引用时，该函数都会被垃圾回收机制（garbage collection），但是由于上述代码中函数showNum2被myNum引用，而函数showNum2又依赖函数showNum，因此函数showNum不会被垃圾回收jizhi</p></div></body></html>
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
   <div class="random-toc">
-    <h2>目录</h2>
+    <h2>Table of Content</h2>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于闭包"><span class="toc-text">关于闭包</span></a></li></ol>
   </div>
 </div>
@@ -172,13 +172,13 @@
   
 <nav id="pagination">
   
-    <a href="/在vue事件处理中注意的问题/" class="prev">&larr; 上一篇 在vue事件处理中注意的问题</a>
+    <a href="/在vue事件处理中注意的问题/" class="prev">&larr; Prev post 在vue事件处理中注意的问题</a>
   
 
   
 
   
-    <a href="/阅读笔记-一/" class="next">下一篇 阅读笔记(一) &rarr;</a>
+    <a href="/阅读笔记-一/" class="next">Next post 阅读笔记(一) &rarr;</a>
   
 </nav>
 
