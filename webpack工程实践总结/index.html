@@ -1,28 +1,150 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Tim-ao</title>
-  <subtitle>Just Do It!</subtitle>
-  <link href="/atom.xml" rel="self"/>
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-10-16T09:10:11.675Z</updated>
-  <id>http://yoursite.com/</id>
+  <meta name="author" content="Tim-ao">
   
-  <author>
-    <name>Tim-ao</name>
+  
+  
+  
+    <meta name="description" content="webpack工程实践总结本文总结的问题
+     什么是 webpack，它解决什么问题？     对 webpack 的主要配置项进行分析，如果我们有什么需求，我们该从哪些配置项着手修改？     分析 create-react-app 的基础配置文件    项目中对 webpack 的总结
+
+//一个常见的`webpack`配置文件
+const webpack = require(&a...">
+  
+  <title>webpack工程实践总结 [ Tim-ao ]</title>
+  
+    <link rel="alternate" href="/atom.xml" title="Tim-ao">
+  
+  
+    <link rel="shortcut icon" href="/1.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/在vue事件处理中注意的问题/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        在vue事件处理中注意的问题
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="/images/avatar.jpg"/>
+          <div id="homelink">Tim-ao</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">主页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">存档</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">关于</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/apacheao/">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>webpack工程实践总结</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2017-10-16</span>
+      
+        <span id = "post-title-updated">Updated at 2017-10-16</span>
+      
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/webpack/">webpack</a>
+      
+      </span>
+      
+    </p>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>webpack工程实践总结</title>
-    <link href="http://yoursite.com/webpack%E5%B7%A5%E7%A8%8B%E5%AE%9E%E8%B7%B5%E6%80%BB%E7%BB%93/"/>
-    <id>http://yoursite.com/webpack工程实践总结/</id>
-    <published>2017-10-16T09:07:26.000Z</published>
-    <updated>2017-10-16T09:10:11.675Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="webpack工程实践总结"><a href="#webpack工程实践总结" class="headerlink" title="webpack工程实践总结"></a>webpack工程实践总结</h2><p><strong>本文总结的问题</strong></p>
+    <h2 id="webpack工程实践总结"><a href="#webpack工程实践总结" class="headerlink" title="webpack工程实践总结"></a>webpack工程实践总结</h2><p><strong>本文总结的问题</strong></p>
 <ol><br>     <li>什么是 <span style="background:#ccc">webpack</span>，它解决什么问题？</li><br>     <li>对 <span style="background:#ccc">webpack</span> 的主要配置项进行分析，如果我们有什么需求，我们该从哪些配置项着手修改？</li><br>     <li>分析 <span style="background:#ccc">create-react-app</span> 的基础配置文件</li><br>    <li>项目中对 <span style="background:#ccc">webpack</span> 的总结</li><br></ol>
 
 <pre><code>//一个常见的`webpack`配置文件
@@ -526,366 +648,210 @@ module.exports = {
          &quot;react-dom&quot;: &quot;^15.6.1&quot;
         }
       }
-</code></pre></greeter>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;webpack工程实践总结&quot;&gt;&lt;a href=&quot;#webpack工程实践总结&quot; class=&quot;headerlink&quot; title=&quot;webpack工程实践总结&quot;&gt;&lt;/a&gt;webpack工程实践总结&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;本文总结的问题&lt;/strong&gt;&lt;/
-    
-    </summary>
-    
-    
-      <category term="webpack" scheme="http://yoursite.com/tags/webpack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>在vue事件处理中注意的问题</title>
-    <link href="http://yoursite.com/%E5%9C%A8vue%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86%E4%B8%AD%E6%B3%A8%E6%84%8F%E7%9A%84%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/在vue事件处理中注意的问题/</id>
-    <published>2017-03-22T11:50:44.000Z</published>
-    <updated>2017-03-22T12:29:33.982Z</updated>
-    
-    <content type="html"><![CDATA[<p>###在vue事件处理中注意的问题<br>1.在事件处理程序中调用<strong>event.preventDefault()</strong>或<strong>event.stopPropagation()</strong>是非常常见的需求。尽管我们可以在methods中轻松实现这点，但更好的方法是：methods只是纯粹的数据逻辑，而不是去处理DOM事件细节。为了解决这一问题，vue.js为<strong>v-on</strong>提供了事件修饰符。通过由点（.）表示的指令后缀来调用修饰符.</p>
-<ul style="color:#F60"><br> <li>.stop</li><br> <li>.prevent</li><br> <li>.capture</li><br> <li>.self</li><br> <li>.once</li><br></ul>
+</code></pre></greeter>
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack工程实践总结"><span class="toc-text">webpack工程实践总结</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#extry-file-处填写入口文件的路径，本文中就是上述main-js的路径，"><span class="toc-text">{extry  file}处填写入口文件的路径，本文中就是上述main.js的路径，</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#destination-for-bundled-file-处填写打包文件的存放路径"><span class="toc-text">{destination for bundled file}处填写打包文件的存放路径</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#填写路径的时候不用添加"><span class="toc-text">填写路径的时候不用添加{}</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">HtmlWebpackPlugin</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">Hot Module Replacement</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">产品阶段的构建</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+</div>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;a v-on:click.stop=&quot;doThis&quot;&gt;&lt;/a&gt;   // 阻止单击事件冒泡 </div><div class="line">&lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt;  //提交事件不再重载页面 </div><div class="line">&lt;a v-on:click.stop.prevent=&quot;toThat&quot;&gt;&lt;/a&gt; //字符串可以串联 </div><div class="line">&lt;form v-on:submit.prevent&gt;&lt;/form&gt; //只有修饰符 </div><div class="line">&lt;div v-on:click.capture=&quot;doThis&quot;&gt;...&lt;/div&gt; //添加事件侦听器时使用事件捕获模式 </div><div class="line">&lt;div v-on:click.self=&quot;doThat&quot;&gt;...&lt;/div&gt; //只有事件在该元素本身（而不是子元素）触发时触发回调 </div><div class="line">&lt;a v-on:click.once=&quot;doThis&quot;&gt;&lt;/a&gt; //-点击事件只会触发一次</div></pre></td></tr></table></figure>
-<p><hr><br><strong>按键修饰符</strong><br><code>&lt;input @keyup.enter=&quot;submit&quot;&gt;</code><br> <ul style="color:#f60"><br>   <li> .enter</li><br>   <li>`.tab</li><br>  <li>.delete</li><br>  <li>.esc</li><br>  <li>.space</li><br>  <li>.up</li><br>  <li>.dowm</li><br>  <li>.left</li><br>  <li>.right</li><br>  <li>.ctrl</li><br>  <li>.alt</li><br>  <li>.shift</li><br>  <li>.meta</li><br></ul></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;###在vue事件处理中注意的问题&lt;br&gt;1.在事件处理程序中调用&lt;strong&gt;event.preventDefault()&lt;/strong&gt;或&lt;strong&gt;event.stopPropagation()&lt;/strong&gt;是非常常见的需求。尽管我们可以在methods中
-    
-    </summary>
-    
-      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
-    
-    
-      <category term="事件处理" scheme="http://yoursite.com/tags/%E4%BA%8B%E4%BB%B6%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
   
-  <entry>
-    <title>关于闭包</title>
-    <link href="http://yoursite.com/%E5%85%B3%E4%BA%8E%E9%97%AD%E5%8C%85/"/>
-    <id>http://yoursite.com/关于闭包/</id>
-    <published>2017-03-21T16:00:00.000Z</published>
-    <updated>2017-10-16T09:10:40.528Z</updated>
-    
-    <content type="html"><![CDATA[<html><head><title>关于闭包</title><meta charset="utf-8"><link href="https://dn-maxiang.qbox.me/res-min/themes/marxico.css" rel="stylesheet"><style></style></head><body><div id="preview-contents" class="note-content"><br><br><br><br><br><br><h3 id="关于闭包">关于闭包</h3><br><br><p><strong>1.为什么要用闭包？</strong> <br><br>在ES5之前具有作用域的仅有函数function。并且有一个特点就是：函数内部可以直接访问外部变量，但在函数外部无法访问函数内部变量，这就是JS语言特有的“链式作用域”结构（chain scope），如果我们要访问函数的内部变量我们就得使用闭包，简单地说，我们使用闭包的主要作用就是间接访问函数的内部数据。 <br><br></p><hr><strong>&lt;1&gt;如何创建闭包</strong><p></p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs delphi">      <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>;<br>      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span><span class="hljs-params">()</span><span class="hljs-comment">{<br>        console.log(num);<br>        }</span><br>        <span class="hljs-title">showNum</span><span class="hljs-params">()</span>;</span>   <span class="hljs-comment">//12</span><br></code></pre><br><br><p>在上面代码中执行函数showNum(),因为函数内部可以访问外部变量num，所以执行结果为12.</p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs javascript">      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>; <span class="hljs-comment">//此处要注意var声明，否则等于直接声明全局变量num</span><br>      <span class="hljs-built_in">console</span>.log(num);<span class="hljs-comment">//Uncaught ReferentceError: num is not defined</span><br>      }<br></code></pre><br><br><p>由于函数外部不能够访问函数内部变量所以直接访问输出num时，由于此时num并未定义，故抛出异常信息。</p><hr> <br><br><strong>在函数内部定义一个内部函数，并将这个函数当作返回值，这样我们就可以获得函数的局部变量。</strong><p></p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs javascript"> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span>(<span class="hljs-params"></span>)</span>{<br>   <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>;<br> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum2</span>(<span class="hljs-params"></span>)</span>{<br>      <span class="hljs-built_in">console</span>.log(num);<br> };<br>   <span class="hljs-keyword">return</span> showNum();<br> }<br> <span class="hljs-keyword">var</span> myNum = showNum();<br>   muNum();  <span class="hljs-comment">//12</span><br></code></pre><br><br><p>在上面的代码中，在函数showNum中嵌一层函数showNum2，由于内层函数可以访问外层函数的变量，所以，执行showNum()函数的，showNum2函数可以直接读取外层函数showNum()的局部变量num的值，并输出12。<br><br><strong>以上实现了闭包的主要作用域之一：读取函数内部变量</strong></p><hr> <br><br><strong>2.还可以将创建变量的值始终保持在内存中，以供本地环境使用</strong><p></p><br><br><br><br><pre class="prettyprint hljs-dark"><code class="hljs javascript">    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum</span>(<span class="hljs-params"></span>)</span>{<br>    <span class="hljs-keyword">var</span> num = <span class="hljs-number">12</span>;<br>    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showNum2</span>(<span class="hljs-params"></span>)</span>{<br>       <span class="hljs-built_in">console</span>.log(++num);<br>      };<br>       <span class="hljs-keyword">return</span> showNum2;<br>    }<br>    <span class="hljs-keyword">var</span> myNum = showNum();<br>    myNum();   <span class="hljs-comment">//13</span><br></code></pre><br><br><p>一般情况下在函数被调用完后不再被引用时，该函数都会被垃圾回收机制（garbage collection），但是由于上述代码中函数showNum2被myNum引用，而函数showNum2又依赖函数showNum，因此函数showNum不会被垃圾回收</p></div></body></html>]]></content>
-    
-    <summary type="html">
-    
-      &lt;html&gt;&lt;head&gt;&lt;title&gt;关于闭包&lt;/title&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;link href=&quot;https://dn-maxiang.qbox.me/res-min/themes/marxico.css&quot; rel=&quot;stylesheet&quot;&gt;&lt;st
-    
-    </summary>
-    
-      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
-    
-    
-      <category term="闭包" scheme="http://yoursite.com/tags/%E9%97%AD%E5%8C%85/"/>
-    
-  </entry>
+<nav id="pagination">
   
-  <entry>
-    <title>阅读笔记(一)</title>
-    <link href="http://yoursite.com/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0-%E4%B8%80/"/>
-    <id>http://yoursite.com/阅读笔记-一/</id>
-    <published>2017-03-08T16:00:00.000Z</published>
-    <updated>2017-03-22T11:56:11.630Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="阅读笔记-一"><a href="#阅读笔记-一" class="headerlink" title="阅读笔记(一)"></a>阅读笔记(一)</h1><hr>
-<p> <strong>计算属性</strong></p>
-<hr>
-<p>计算属性应用于一切复杂逻辑<br><br><br>基础实例：<br></p>
-<pre><code>&lt;div id=&quot;example&quot;&gt;
-    &lt;p&gt;Original message{{message}}&lt;/p&gt;
-    &lt;p&gt;computed message{{reversedMessage}}&lt;/p&gt;
-&lt;/div&gt;
-</code></pre><p>   <br>  </p>
-<pre><code>var vm = new Vue({
-  el:&quot;#example&quot;,
-  data:{message:&apos;Hello&apos;},
-  computed:{
-  reversedMessage:function(){
-           return this message.split(&apos;&apos;).reverse().join(&apos;&apos;)}
-           }
+
+  
+
+  
+    <a href="/在vue事件处理中注意的问题/" class="next">Next post 在vue事件处理中注意的问题 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Tim-ao using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="/images/avatar.jpg">
+    <p id="description">下一次,世界精彩处见！</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://www.douban.com/people/102386480/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://www.facebook.com/ao.zhiqiang">
+        
+          <i class="icon iconfont facebook">&#xe604;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/5310594076/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="https://github.com/apacheao">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.ftchinese.com/users/mystories">
+        
+          <i class="icon iconfont rss">&#xe60e;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
 });
-</code></pre><hr>
-<p><strong>说明：</strong></p>
-<hr>
-<p>这里我们声明了一个计算属性reversedMessage。我们提供的函数将用作属性vm.reversedMessage的getter,这里的reversedMessage得知取决于vm.message<br><br> </p>
-<hr>
-<p>不难看出我们也可以通过methods来实现：</p>
-<pre><code>var vm = new Vue({
-  el:&quot;#example&quot;,
-  data:{message:&apos;Hello&apos;},
-  methods:{
-     reversedMessage:function(){
-          return this message.split(&apos;&apos;).reversed().join(&apos;&apos;)
-            }}; 
-</code></pre><hr>
-<p>关于computed与methods的区别：<br><br>计算属性存在依赖缓存，计算属性在相关依赖发生变化时才会重新取值，这就意味着只要message不发生改变， 计算属性就会立即返回之前的结果，而不必再执行函数。<br><br><hr>这也就意味着如下计算属性不会更新，因为Date.now()不是响应式依赖。</p>
-<pre><code>comptued:{
-   now:function(){
-     return Data.now()
-}}
-</code></pre><hr>
-<p>相比于计算属性，每次渲染，methods都会执行函数。<br><br><br>关于computed与methods的选择：我们为什么用计算缓存？假设我们有一个重要的计算属性A，这个计算属性需要大量的数组遍历和做巨大的运算，然后我们可能用其他的计算属性依赖A，如果没有缓存我们必须大量执行A的getter！如果不需要缓存请用methods.<br><br><br><hr><br><strong>计算属性&nbsp;VS&nbsp;Watch&nbsp;property</strong></p>
-<p>vue.js提供了一个$watch方法，它便于观察Vue实例上的数据变动</p>
-<pre><code>&lt;div id=&quot;demo&quot;&gt;{{fullName}}&lt;/div&gt;
-</code></pre><p>   <br></p>
-<pre><code>var vm = new Vue({
-     el:&quot;demo&quot;
-     data:{
-        firstName:&apos;Foo&apos;,
-        lastName:&apos;Bar&apos;,
-        fullName:&apos;Foo Bar&apos;}
-     watch:{
-       firstName:function(){
-            this.fullName = val + &apos;&apos; +this.lastName },
-       lastName:function(){
-            this.fullName = this.first + &apos;&apos; +val },  
-     }})
-</code></pre><p>   <br></p>
-<pre><code>var vm = new Vue({
-        el:&quot;demo&quot;
-        data:{
-            firstName:&apos;Foo&apos;,
-            lastName:&apos;Bar&apos;
-            },
-        computed:{
-           fullName:function(){
-           return this.firstName + &apos; &apos; + this.lastName}}
-        });     
-</code></pre><hr>
-<p>计算setter:计算属性默认只有getter,在必要时也可以设置setter</p>
-<pre><code>computed:{
-   fullName:{
-      get:function(){
-      return this.firstName + &apos; &apos; + this.lastName}
-      set:function(newValue){
-      var names = newValue.split() 
-      firstName = names[0]
-      lastName = name[names.length-1]
-      }}}
-</code></pre><p><br><br>现在更新vm.fullName时，vm.firstName以及vm.lastName也会对应更新。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;阅读笔记-一&quot;&gt;&lt;a href=&quot;#阅读笔记-一&quot; class=&quot;headerlink&quot; title=&quot;阅读笔记(一)&quot;&gt;&lt;/a&gt;阅读笔记(一)&lt;/h1&gt;&lt;hr&gt;
-&lt;p&gt; &lt;strong&gt;计算属性&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;计算属性应用于一切复杂逻
-    
-    </summary>
-    
-      <category term="vue" scheme="http://yoursite.com/categories/vue/"/>
-    
-    
-      <category term="计算属性" scheme="http://yoursite.com/tags/%E8%AE%A1%E7%AE%97%E5%B1%9E%E6%80%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于瀑布流应该注意的一些问题</title>
-    <link href="http://yoursite.com/%E5%85%B3%E4%BA%8E%E7%80%91%E5%B8%83%E6%B5%81%E5%BA%94%E8%AF%A5%E6%B3%A8%E6%84%8F%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/"/>
-    <id>http://yoursite.com/关于瀑布流应该注意的一些问题/</id>
-    <published>2017-03-01T08:06:31.000Z</published>
-    <updated>2017-03-01T08:08:36.783Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>**关于瀑布流应该注意的一些问题**
-</code></pre><hr>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;瀑布流的特点： 可以渲染出从后台导出的数据，从而节约前端的内存压力，加快数据加载的速度。<br>&nbsp;&nbsp;&nbsp;&nbsp;其原理：当你滑动滚动条到一定的距离时，窗口会自动加载从后台出来的数据</p>
-<hr>
-<p>在js文件夹里将data以json数据格式进行处理；</p>
-<pre><code>var dataInt={
-     &quot;data&quot;:[ {&apos;src&apos;:&quot;0.jpg&quot;}, {&apos;src&apos;:&quot;1.jpg&quot;},
-              {&apos;src&apos;:&quot;2.jpg&quot;}, {&apos;src&apos;:&quot;3.jpg&quot;},
-              {&apos;src&apos;:&quot;4.jpg&quot;}, {&apos;src&apos;:&quot;5.jpg}]
-            }
-</code></pre><hr>
-<p>将数据塞进HTML结构中；</p>
-<pre><code>for(var i=0;i&lt;dataInt.data.length;i++){
- var oBox=document.createElement(&apos;div&apos;);
- oBox.className=&apos;box&apos;;
- oParent.appendChild(oBox);
- var oPic=document.createElement(&apos;div&apos;);
- oPic.className=&apos;pic&apos;;
- oBox.appendChild(oPic);
- var oImg=document.createElement(&apos;img&apos;);
- oImg.src=&quot;images/&quot;+dataInt.data[i].src;
- oPic.appendChild(oImg);}
-</code></pre><hr>
-<p>除了渲染部分还以该注意在取窗口的高度以及滑块距离窗口顶部时存在浏览器的兼容问题，即，存在混杂模式与非混杂模式，其处理方式为：</p>
-<pre><code>var scollTop=document.body.scollTop||document.documentElement.scollTop;
-var height=document.body.clientHeight||document.documentElement.clientHeight;
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;pre&gt;&lt;code&gt;**关于瀑布流应该注意的一些问题**
-&lt;/code&gt;&lt;/pre&gt;&lt;hr&gt;
-&lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;瀑布流的特点： 可以渲染出从后台导出的数据，从而节约前端的内存压力，加快数据加载的速度。&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp
-    
-    </summary>
-    
-      <category term="JS" scheme="http://yoursite.com/categories/JS/"/>
-    
-    
-      <category term="waterfall" scheme="http://yoursite.com/tags/waterfall/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于对篮球这项运动的理解</title>
-    <link href="http://yoursite.com/%E5%85%B3%E4%BA%8E%E5%AF%B9%E7%AF%AE%E7%90%83%E8%BF%99%E9%A1%B9%E8%BF%90%E5%8A%A8%E7%9A%84%E7%90%86%E8%A7%A3/"/>
-    <id>http://yoursite.com/关于对篮球这项运动的理解/</id>
-    <published>2017-02-24T08:33:55.000Z</published>
-    <updated>2017-02-24T09:35:18.707Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>下列言论源于码农的臆想综合征</strong></p>
-<hr>
-<p>写完不知是几个小时的代码略感疲倦，便写篇对篮球理解的谬论解解乏。<br>全明星还没结束，考辛斯便被国王扫地出门，全明星只打了2分27秒便可知考辛斯的愤懑程度，从来没有人在离全明星这么近的时候交易的，这个交易一下子把全明星赛后的头条给抢了，什么“浓眉哥”的52分，“字母哥”30分，杜兰特的“三双”，三旬老汉的各种暴扣，阿杜给威少的传球，库里抱脑袋卖萌，那些都弱爆了好伐。。。<br>全明星过后安东尼·戴维斯便成了最大的赢家，不知该哭还是该笑，同为肯塔基的同门，不知考辛斯对浓眉耍小脾气他该如何面对…</p>
-<p>回归正题，谈谈对篮球的理解，从一个观众角度来说：对于姚老板在36岁的年纪当选篮协主席搁在过去。不敢想象，说明现在的中国男篮的改革真的要动真格的了，但改成什么样，恐怕还没人知道，所以这才是上头选中姚明的原因吧，有了从满想象力的开始，才会有充满想象力的未来，虽然知道姚明会当选，但就在他真的当选时，还是有点感慨万千。</p>
-<p>中国篮球这些年毁誉交加，神鬼难辨，说不断，理还乱。单靠政府性政策，一节换一届，已经难以跟上世界篮球的发展潮流和速度，所以，姚明此行，任重道远。姚明打球打到名人堂，演讲演到奥运会和世界杯申办讲台，游历丰富，见多识广，人脉广泛，更有一种对中国篮球的一腔热血，满肚子的改革思想…就此，姚明的权限就不止于CBA，更要担起整个篮球的改革重担，专业人做专业事，便有了上天入地的空间。</p>
-<p>回到NBA的赛场…</p>
-<p>在湖人的训练馆二层开着这么一扇大窗，很少拉上帘子，靠窗摆着一溜奥克莱恩杯。从窗子往下看去，可以看到整个训练馆的全部四片球场。在球场训练时，队员们一抬头就可以看到金杯，有时会有老板的眼神——以后，在这里注视他们的将是“魔术师”和珍妮。</p>
-<p>珍妮-巴斯说干就干，截至交易日的前两天，突然把“魔术师”约翰逊扶正，炒了老臣库普切克的鱿鱼…是的，湖人历史上的“魔术师时代”拉开帷幕。</p>
-<p>第一把火就把路易斯·威廉姆斯烧到了火箭换了“骑兵连连长”和一个二轮选秀权，路易斯·威廉姆斯在湖人扮演第一得分手角色，交易他就意味着湖人完全放弃这个赛季，将阵容继续年轻化。</p>
-<p>这次“魔术师”出任湖人董事长，与姚明出任篮协主席并列来看。这两个事件某种意义上是同样一个道理：约翰逊和姚都是众望所归，但因为他们不再自己上场打球，因此未来——等着看好戏…</p>
-<p>——部分选自苏群老师的理解，未来我们共同见证！  ^_^</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;下列言论源于码农的臆想综合征&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;写完不知是几个小时的代码略感疲倦，便写篇对篮球理解的谬论解解乏。&lt;br&gt;全明星还没结束，考辛斯便被国王扫地出门，全明星只打了2分27秒便可知考辛斯的愤懑程度，从来没有人在离全明星这么近的
-    
-    </summary>
-    
-      <category term="Sports" scheme="http://yoursite.com/categories/Sports/"/>
-    
-    
-      <category term="basketball" scheme="http://yoursite.com/tags/basketball/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>正则表达式</title>
-    <link href="http://yoursite.com/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    <id>http://yoursite.com/正则表达式/</id>
-    <published>2017-02-18T16:00:00.000Z</published>
-    <updated>2017-02-19T11:55:02.781Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Javascript中关于正则表达式的一些问题"><a href="#Javascript中关于正则表达式的一些问题" class="headerlink" title="Javascript中关于正则表达式的一些问题"></a>Javascript中关于正则表达式的一些问题</h3><hr>
-<p><strong>1.修饰符 </strong><br>  修饰符分为三类：<br>  1）global：全局搜索，不添加，搜索到第一个匹配停止 （g）<br>  2) ignore case：忽略大小写，默认大小写敏感 （i）<br>  3）multiple lines：多行搜索 （m）</p>
-<p><strong>2.预定义类</strong><br>  <img src="./D:\Blog_images\正则表达式1.png" alt="Alt text"></p>
-<p> 关于预定义类的demo<br>  <img src="./D:\Blog_images\正则表达式2.png" alt="Alt text"></p>
-<p><strong>3.量词</strong><br>由于元字符与特殊字符或字符类或者它们的组合（中括号）甚至它们的马甲（预定义类）都是一对一进行匹配。我们要匹配”司徒正美这个词”，最简单都要/…/，如果长达50个字就比较麻烦。因此我们迫切需要一个简单的操作来处理这类的数量关系（量词仅匹配于紧挨着它的字符）。<img src="./D:\Blog_images\正则表达式5.png" alt="Alt text"></p>
-<p>比如：<img src="./D:\Blog_images\正则表达式3.png" alt="Alt text"><br><img src="./D:\Blog_images\正则表达式4.png" alt="Alt text"></p>
-<p><strong>4.非贪婪模式</strong><br>让正则表达式尽可能少的匹配，也就是说一旦成功匹配不在继续尝试就是非贪婪模式<br>做法很简单，在量词后加上？即可</p>
-<blockquote>
-<p>‘123456789’.match(/\d(3,5)?/g)<br>[“123”，”456”，”789”] </p>
-</blockquote>
-<p><strong>5.分组</strong><br>到目前为止，我们只能一个字符到匹配，虽然量词的出现，能帮助我们处理一排密紧密相连的同类型字符。但这是不够的，下面该轮到小括号出场了，中括号表示范围内选择，大括号表示重复次数。小括号允许我们重复多个字符。<img src="D:\Blog_images\正则表达式6.png" alt="Alt text"></p>
-<p>以及不同的表达式所体现的不同图形含义<br><img src="./D:\Blog_images\正则表达式7.png" alt="Alt text"><br><img src="./D:\Blog_images\正则表达式8.png" alt="Alt text"></p>
-<p>在Console中对分组测试<br><img src="./D:\Blog_images\正则表达式9.png" alt="Alt text"><br><img src="./D:\Blog_images\正则表达式10.png" alt="Alt text"><br><img src="./D:\Blog_images\正则表达式11.png" alt="Alt text"><br><img src="./D:\Blog_images\正则表达式12.png" alt="Alt text"><br><img src="./D:\Blog_images\正则表达式13.png" alt="Alt text"></p>
-<p><strong>6.反向引用</strong><br>反向引用标识由正则表达式中的匹配组捕获的子字符串。每个反向引用都由一个编号或名称来标识，并通过“\编号”表示法进行引用。<img src="./D:\Blog_images\正则表达式14.png" alt="Alt text"></p>
-<p><strong>7.前瞻</strong><br>正则表达式从文本头部向尾部开始解析，文本尾部方向称为”前”<br>前瞻就是在正则表达式匹配到规则的时候，向前检查是否符合断言，后顾、后瞻方向相反。<img src="./D:\Blog_images\正则表达式15.png" alt="Alt text"></p>
-<p><img src="D:\Blog_images\正则表达式16.png" alt="Alt text"><br>继续在分组内做文章，前瞻与后瞻其实都属于零宽断言，但js不支持后瞻，正向前瞻用来检查接下来出现的是不是某个特定的字符集。而负向前瞻则是检查接下来不应该出现的特定字符串集。零宽断言是不会捕获的。<img src="./D:\Blog_images\正则表达式17.png" alt="Alt text"><img src="./D:\Blog_images\正则表达式18.png" alt="Alt text"></p>
-<p><strong>8.对象属性</strong><br>1）global：是否全文搜索，默认false<br>2）ignore case：是否大小写敏感，默认是false<br>3）multiline：多行搜索，默认值是false<br>4）lastIndex：是当前表达式匹配内容的最后一个字符的下一个位置<br>5）source：正则表达式的文本字符串</p>
-<p> 对lastIndex概念的demo<br> <img src="./D:\Blog_images\正则表达式19.png" alt="Alt text"></p>
-<p><strong>边界</strong><br>要与字符类合用<br><img src="./D:\Blog_images\正则表达式20.png" alt="Alt text"><br>实现首字母大写<br><img src="./D:\Blog_images\正则表达式21.png" alt="Alt text"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Javascript中关于正则表达式的一些问题&quot;&gt;&lt;a href=&quot;#Javascript中关于正则表达式的一些问题&quot; class=&quot;headerlink&quot; title=&quot;Javascript中关于正则表达式的一些问题&quot;&gt;&lt;/a&gt;Javascript中关于正则表达
-    
-    </summary>
-    
-      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
-    
-    
-      <category term="正则表达式" scheme="http://yoursite.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>基于git命令行上传本地代码项目到github</title>
-    <link href="http://yoursite.com/%E5%9F%BA%E4%BA%8Egit%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%8A%E4%BC%A0%E6%9C%AC%E5%9C%B0%E4%BB%A3%E7%A0%81%E9%A1%B9%E7%9B%AE%E5%88%B0github/"/>
-    <id>http://yoursite.com/基于git命令行上传本地代码项目到github/</id>
-    <published>2017-02-15T16:00:00.000Z</published>
-    <updated>2017-02-19T05:25:39.407Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤"><a href="#关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤" class="headerlink" title="关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤"></a>关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤</h2><blockquote>
-<p><1>添加本地与github的ssh key </1></p>
-</blockquote>
-<hr>
-<blockquote>
-<p><2>打开本地的git shell   通过cd命令进入你要上传的工程中 执行 git init  再执行git add . （小数点代表的是上传所用的文件）再执行git commit -m “first commit” 再执行 git remote add origin + repository下的URL 再执行git pull 再执行git pull origin master 最后再执行git push -u origin master</2></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤&quot;&gt;&lt;a href=&quot;#关于本地代码项目运用git命令行的方式上传到代码托管网站的具体步骤&quot; class=&quot;headerlink&quot; title=&quot;关于本地代码项目运用git命令行的方式上传到代码托管
-    
-    </summary>
-    
-      <category term="Github" scheme="http://yoursite.com/categories/Github/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于Hexo博客的更新问题</title>
-    <link href="http://yoursite.com/hello-world/"/>
-    <id>http://yoursite.com/hello-world/</id>
-    <published>2017-02-08T16:00:00.000Z</published>
-    <updated>2017-02-09T13:29:25.876Z</updated>
-    
-    <content type="html"><![CDATA[<p><strong>部署主题，本地查看效果</strong></p>
-<hr>
-<p> 返回Hexo目录，右键git bash，输入</p>
-<blockquote>
-<p>hexo g<br>hexo s</p>
-</blockquote>
-<hr>
-<p>打开浏览器，输入<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a>  即预览本地主题更换</p>
-<p><br><br><br><strong>如果效果满意,将它部署到github上</strong></p>
-<hr>
-<p>打开Hexo文件夹，右键git bash，输入</p>
-<blockquote>
-<p>hexo clean （必须要，不然有时因为缓存问题，服务器更新不了主题）<br>hexo g -d</p>
-</blockquote>
-<p><br><br><strong>打开自己主页即可以浏览自己Blog效果</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;strong&gt;部署主题，本地查看效果&lt;/strong&gt;&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt; 返回Hexo目录，右键git bash，输入&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;hexo g&lt;br&gt;hexo s&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;hr&gt;
-&lt;p&gt;打开浏览器，输入&lt;
-    
-    </summary>
-    
-      <category term="Technology" scheme="http://yoursite.com/categories/Technology/"/>
-    
-    
-      <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
-    
-  </entry>
-  
-</feed>
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
