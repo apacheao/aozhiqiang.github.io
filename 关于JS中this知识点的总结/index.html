@@ -125,14 +125,14 @@
   <article id="post">
     <h1>关于JS中this知识点的总结</h1>
     <p class="page-title-sub">
-      <span id = "post-title-date">Created at 2018-04-23</span>
+      <span id = "post-title-date">撰写于 2018-04-23</span>
       
-        <span id = "post-title-updated">Updated at 2018-04-23</span>
+        <span id = "post-title-updated">修改于 2018-04-23</span>
       
       
       
       <span id = "post-title-tags">
-      Tag
+      标签
       
       
         
@@ -198,10 +198,10 @@
 </h5></h5>
   </article>
   <div class="random-toc-area">
-  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
-  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
   <div class="random-toc">
-    <h2>Table of Content</h2>
+    <h2>目录</h2>
     <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#undefined"><span class="toc-text">关于JS中this知识点的总结</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text"> 在闭包中使用 this 对象以及 this 指向问题</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#undefined"><span class="toc-text">常见的几种关于this的案例1234567891011//<1>   var name = 'The Window';   var object = {        name: 'My Object',        getNameFunc: function() {           return function() {              return this.name          }           }    }    console.log(object.getNameFunc());   //'The Window'
 12345678910111213//<2>   var name = 'The Window';   var object = {        name: 'My Object',        getNameFunc: function() {           var that = this;           return function() {              return that.name          }           }    }    console.log(object.getNameFunc());       //'My Window' 在声明匿名函数之前就已经把this指向object的变量保存到了that里面
 1234567891011//<3>   var name = 'The Window';   var object = {        name: 'My Object',        getNameFunc: function() {           return this.name       }    }    console.log(object.getNameFunc());   //'My Object'    console.log((object.getNameFunc)());   //'My Object'    console.log((object.getNameFunc = object.getNameFunc)());   //'The Window' 先执行赋值表达式，返回函数本身，再调用执行后的结果，此时this不再维持
@@ -307,7 +307,7 @@ bind方法的参数就是要绑定this的对象12345678910var counter = {   var 
   
 
   
-    <a href="/webpack工程实践总结/" class="next">Next post webpack工程实践总结 &rarr;</a>
+    <a href="/webpack工程实践总结/" class="next">下一篇 webpack工程实践总结 &rarr;</a>
   
 </nav>
 
